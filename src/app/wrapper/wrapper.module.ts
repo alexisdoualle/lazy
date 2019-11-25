@@ -1,5 +1,4 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core';
 import { CounterService } from '../counter.service';
 import { LazyCounterLibModule } from 'lazy-counter-lib';
 /**
@@ -11,24 +10,7 @@ import { LazyCounterLibModule } from 'lazy-counter-lib';
  */
 @NgModule({
   imports: [
-    //   WrapperLibModule.forRoot(CounterService)
     LazyCounterLibModule.forRoot(CounterService),
-    // RouterModule.forChild([
-    //   { 
-    //     path: '',
-    //     loadChildren: () => import('src/app/wrapper/wrapper-lib.module').then(m => m.WrapperLibModule)
-    //   }
-    // ])
      ],
-//   providers: [ CounterService ]
 })
-export class WrapperModule {
-//     static forRoot(counterService): ModuleWithProviders {
-//     return {
-//       ngModule: WrapperModule,
-//       // useExisting returns the singleton of the provider
-//       // while useClass would have created a duplicate instance
-//       providers: [{provide: 'CounterService', useExisting: counterService}]
-//     }
-//   }
-}
+export class WrapperModule { }
